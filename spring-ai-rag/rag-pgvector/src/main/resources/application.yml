@@ -14,7 +14,7 @@ spring:
       pgvector:
         dimensions: 1536
         index-type: hnsw
-        distance-type: cosine_distance
+        distance-type: COSINE_DISTANCE
         initialize-schema: true
 server:
   port: 10011

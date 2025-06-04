@@ -1,9 +1,7 @@
 package com.example.wx.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.ai.tool.annotation.ToolParam;
-import org.springframework.context.annotation.Description;
 
 /**
  * @author wangxiang

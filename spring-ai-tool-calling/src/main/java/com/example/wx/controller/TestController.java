@@ -2,7 +2,6 @@ package com.example.wx.controller;
 
 import com.example.wx.compontent.DateTimeTools;
 import com.example.wx.compontent.MathTools;
-import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.messages.SystemMessage;
@@ -35,7 +34,6 @@ public class TestController {
     @Autowired
     private ChatModel chatModel;
 
-    @Autowired
     public TestController(ChatClient.Builder builder) {
         this.chatClient = builder.build();
     }

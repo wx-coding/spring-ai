@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("client")
 public class ChatClientController {
-    private static final String DEFAULT_PROMPT = "你好，介绍下你自己！";
 
 
     private final ChatClient DeepSeekChatClient;

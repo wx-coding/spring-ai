@@ -5,7 +5,6 @@ import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.SystemPromptTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,6 @@ public class RoleController {
     @Value("classpath:/prompts/system-message.st")
     private Resource systemResource;
 
-    @Autowired
     public RoleController(ChatClient.Builder builder) {
         this.chatClient = builder.defaultSystem("中文回答").build();
     }

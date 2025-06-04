@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * @author wangxiang
  * @description
@@ -92,7 +89,7 @@ public class DashScopeChatClientController {
     public String memoryChat(@PathVariable(value = "chatId") String chatId, @RequestParam("message") String message) {
 
         return chatClient.prompt(message)
-                .advisors(a->a.param(ChatMemory.CONVERSATION_ID, chatId))
+                .advisors(a -> a.param(ChatMemory.CONVERSATION_ID, chatId))
                 .advisors()
                 .call().content();
     }
