@@ -15,6 +15,7 @@
         <module>spring-ai-structured</module>
         <module>spring-ai-tool-calling</module>
         <module>spring-ai-rag</module>
+        <module>agent-example</module>
     </modules>
 
     <name>Spring AI</name>
