@@ -6,10 +6,11 @@
     <parent>
         <groupId>com.example.wx</groupId>
         <artifactId>spring-ai-ll</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <version>${revision}</version>
     <artifactId>spring-ai-prompt</artifactId>
 
     <properties>
@@ -34,5 +35,19 @@
             <version>3.0.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

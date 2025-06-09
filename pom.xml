@@ -8,7 +8,6 @@
     <version>${revision}</version>
 
     <packaging>pom</packaging>
-    <url>https://github.com/alibaba/spring-ai-alibaba</url>
     <modules>
         <module>spring-ai-chat</module>
         <module>spring-ai-prompt</module>
