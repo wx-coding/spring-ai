@@ -10,10 +10,10 @@ spring:
       chat:
         options:
           model: qwen-plus-2025-01-25
-#      embedding:
-#        options:
-#          model: multimodal-embedding-v1
-#        base-url: https://dashscope.aliyuncs.com/api/v1/services/embeddings/multimodal-embedding/multimodal-embedding
-    model:
       embedding:
-        multimodal: multimodal-embedding-v1
+        options:
+          model: text-embedding-v4
+#        base-url: https://dashscope.aliyuncs.com/api/v1/services/embeddings/multimodal-embedding/multimodal-embedding
+#    model:
+#      embedding:
+#        multimodal: multimodal-embedding-v1

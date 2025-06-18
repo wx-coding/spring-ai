@@ -1,4 +1,4 @@
-package com.example.wx;
+package com.example.wx.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
@@ -23,9 +23,12 @@ public class ChatClientController {
         this.chatClient = ChatClient.builder(chatModel).build();
     }
 
-    @GetMapping
-    public Flux<String> chat(@RequestParam(defaultValue = "hi") String prompt) {
-
+    @GetMapping("/stream")
+    public Flux<String> streamChat(@RequestParam(value = "prompt", defaultValue = "hi") String prompt) {
         return chatClient.prompt(prompt).stream().content();
+    }
+    @GetMapping
+    public String chat(@RequestParam(value = "prompt", defaultValue = "hi") String prompt) {
+        return chatClient.prompt(prompt).call().content();
     }
 }

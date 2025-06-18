@@ -1,12 +1,21 @@
+server:
+  port: 10013
+
 spring:
   application:
     name: spring-ai-observability-dashscope
   ai:
     dashscope:
+      chat:
+        options:
+          model: qwen-plus-2025-01-25
       api-key: ${DASH_SCOPE_API_KEY}
       observations:
         log-completion: true
         log-prompt: true
+      embedding:
+        options:
+          model: text-embedding-v4
     chat:
       client:
         observations:
@@ -47,3 +56,7 @@ management:
     sampling:
       # trace 采样信息，记录每个请求
       probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://192.168.1.11:9411/api/v2/spans
+
