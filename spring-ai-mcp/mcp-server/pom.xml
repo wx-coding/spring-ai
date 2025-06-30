@@ -5,13 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example.wx</groupId>
-        <artifactId>spring-ai-chat</artifactId>
+        <artifactId>spring-ai-mcp</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>dashscope-chat</artifactId>
     <version>${revision}</version>
+    <artifactId>mcp-server</artifactId>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -20,16 +19,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server-webflux</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
     </dependencies>
-
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -46,5 +43,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

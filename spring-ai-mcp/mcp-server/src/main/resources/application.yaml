@@ -1,0 +1,17 @@
+server:
+  port: 10014
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spring-ai-mcp-server
+#  main:
+#    web-application-type: none
+#    banner-mode: off
+  ai:
+    mcp:
+      server:
+#        stdio: true
+        version: 1.0.0
+        type: sync
+        instructions: 计算器mcp

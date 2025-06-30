@@ -1,0 +1,26 @@
+server:
+  port: 10015
+
+spring:
+  application:
+    name: mcp-client
+  main:
+    web-application-type: none
+  profiles:
+    active: dev
+  ai:
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        options:
+          model: deepseek-chat
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:/mcp-server.json
+#        sse:
+#          connections:
+#            server1:
+#              url: http://127.0.0.1:10014
+#              sse-endpoint: /sse
+  mandatory-file-encoding: UTF-8

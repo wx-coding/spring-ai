@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "wea": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "java",
+        "-Dspring.main.web-application-type=none",
+        "-Dspring.main.banner-mode=off",
+        "-Dlogging.pattern.console=",
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-jar",
+        "E:\\idea\\ai\\spring-ai\\spring-ai-mcp\\mcp-server\\target\\mcp-server.jar"
+      ],
+      "env": {}
+    }
+  }
+}

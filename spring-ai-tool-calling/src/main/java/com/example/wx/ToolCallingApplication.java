@@ -15,7 +15,7 @@ import java.util.Set;
 public class ToolCallingApplication {
     public static void main(String[] args) {
         Dotenv dotenv = Dotenv.configure().filename(".env").load();
-        Set<String> set = Set.of("DEEPSEEK_API_KEY", "DEEPSEEK_BASE_URL");
+        Set<String> set = Set.of("DEEPSEEK_API_KEY");
         for (String item : set) {
             System.setProperty(item, dotenv.get(item));
         }

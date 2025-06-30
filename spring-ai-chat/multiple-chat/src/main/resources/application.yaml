@@ -1,0 +1,17 @@
+server:
+  port: 10013
+
+spring:
+  application:
+    name: multiple-chat-example
+  ai:
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        options:
+          model: deepseek-chat
+    dashscope:
+      api-key: ${DASH_SCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen-plus-2025-01-25
