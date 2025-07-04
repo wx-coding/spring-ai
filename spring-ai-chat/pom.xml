@@ -15,6 +15,7 @@
     <modules>
         <module>deepseek-chat</module>
         <module>dashscope-chat</module>
+        <module>multiple-chat</module>
     </modules>
     <artifactId>spring-ai-chat</artifactId>
 

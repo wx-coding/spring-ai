@@ -16,6 +16,7 @@
     <modules>
         <module>rag-milvus</module>
         <module>rag-pgvector</module>
+        <module>rag-etl</module>
     </modules>
 
     <properties>
