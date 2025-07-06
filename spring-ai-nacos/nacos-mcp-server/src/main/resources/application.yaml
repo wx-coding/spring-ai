@@ -1,0 +1,31 @@
+server:
+  port: 10018
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: nacos-mcp-server
+  ai:
+    mcp:
+      server:
+        name: nacos-mcp-server
+        version: 1.0.0
+        type: async
+        instructions: "计算器"
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true
+    alibaba:
+      mcp:
+        nacos:
+          server-addr: 127.0.0.1:8848
+          username: nacos
+          password: nacos
+          registry:
+            enabled: true
+            service-group: mcp-server
+
+
