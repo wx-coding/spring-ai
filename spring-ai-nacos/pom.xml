@@ -16,6 +16,7 @@
     <modules>
         <module>nacos-prompt</module>
         <module>nacos-mcp-server</module>
+        <module>nacos-mcp-client</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

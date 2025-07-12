@@ -22,10 +22,9 @@ spring:
       mcp:
         nacos:
           server-addr: 127.0.0.1:8848
-          username: nacos
-          password: nacos
           registry:
             enabled: true
             service-group: mcp-server
+            service-name: webflux-mcp-server
 
 

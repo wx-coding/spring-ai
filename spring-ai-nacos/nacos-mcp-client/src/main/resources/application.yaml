@@ -1,0 +1,41 @@
+server:
+  port: 10019
+
+spring:
+  main:
+    web-application-type: none
+  application:
+    name: mcp-nacos-client-example
+  ai:
+    openai:
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        options:
+          model: deepseek-chat
+      base-url: https://api.deepseek.com
+    mcp:
+      client:
+        enabled: true
+        name: my-mcp-client
+        version: 1.0.0
+        request-timeout: 30s
+        type: ASYNC  # or ASYNC for reactive applications
+
+    alibaba:
+      mcp:
+        nacos:
+          server-addr: 127.0.0.1:8848
+          client:
+            enabled: true
+            sse:
+              connections:
+                server1:
+                  service-name: webflux-mcp-server
+
+# 调试日志
+logging:
+  level:
+    io:
+      modelcontextprotocol:
+        client: DEBUG
+        spec: DEBUG
