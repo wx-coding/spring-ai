@@ -17,6 +17,7 @@
         <module>rag-milvus</module>
         <module>rag-pgvector</module>
         <module>rag-etl</module>
+        <module>rag-bailian-knowledge</module>
     </modules>
 
     <properties>

@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example.wx</groupId>
-        <artifactId>spring-ai-nacos</artifactId>
+        <artifactId>spring-ai-rag</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>nacos-mcp-client</artifactId>
+    <artifactId>rag-bailian-knowledge</artifactId>
     <version>${revision}</version>
 
     <properties>
@@ -20,26 +20,19 @@
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-autoconfigure-model-openai</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-autoconfigure-model-chat-client</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-starter-nacos-mcp-client</artifactId>
-            <version>${spring-ai-alibaba.version}</version>
+            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-mcp-client-webflux</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 
