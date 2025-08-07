@@ -14,9 +14,9 @@ import org.springframework.context.annotation.Configuration;
 public class BaiLianConfig {
     @Value("${spring.ai.dashscope.api-key}")
     private String apiKey;
+
     @Bean
     public DashScopeApi dashScopeApi() {
-        System.out.println("apiKey = " + apiKey);
         return DashScopeApi.builder().apiKey(apiKey).build();
     }
 }

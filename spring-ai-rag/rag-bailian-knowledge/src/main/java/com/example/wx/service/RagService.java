@@ -12,4 +12,6 @@ public interface RagService {
     void importDocuments();
 
     Flux<ChatResponse> retrieve(String message);
+
+    String delete(String[] idList);
 }

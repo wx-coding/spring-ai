@@ -1,0 +1,59 @@
+server:
+  port: 10021
+
+spring:
+  application:
+    name: playground
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  profiles:
+    active: dev
+  ai:
+    knowledge-base:
+      # 主要知识库类型
+      primary-type: pgvector  # bailian | pgvector | simple
+      # 备用知识库类型（当主要知识库不可用时）
+      fallback-type: simple
+      # 百炼知识库配置
+      bailian:
+        index-name: ${BAILIAN_INDEX_NAME:default-index}
+        enabled: true
+
+      # PGVector配置
+      pgvector:
+        enabled: true
+        top-k: 5
+        similarity-threshold: 0.7
+
+      # 简单向量库配置
+      simple:
+        enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.example.wx
+
+knife4j:
+  #是否启用增强设置
+  enable: true
+  #开启生产环境屏蔽
+  production: true
+  #是否启用登录认证
+  # basic:
+  #   enable: true
+  #  username: admin
+  #  password: 123456
+  setting:
+    language: zh_cn
+    enable-version: true
+    enable-swagger-models: true

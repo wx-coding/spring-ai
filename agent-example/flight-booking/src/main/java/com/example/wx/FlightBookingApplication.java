@@ -1,7 +1,6 @@
 package com.example.wx;
 
-import java.util.Set;
-
+import io.github.cdimascio.dotenv.Dotenv;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.memory.ChatMemory;
@@ -15,12 +14,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import io.github.cdimascio.dotenv.Dotenv;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
-import org.springframework.web.client.RestClient;
+
+import java.util.Set;
 
 /**
  * @author wangxiang

@@ -32,4 +32,9 @@ public class CloudRagController {
             defaultValue = "你好，请问你的知识库文档主要是关于什么内容的?") String message) {
         return ragService.retrieve(message).map(x -> x.getResult().getOutput().getText());
     }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam(value = "idList") String[] idList) {
+        return ragService.delete(idList);
+    }
 }
