@@ -123,6 +123,7 @@ public class ImageServiceImpl implements ImageService {
                                 .withHeight(Integer.valueOf(resolution.split("\\*")[0]))
                                 .withWidth(Integer.valueOf(resolution.split("\\*")[1]))
                                 .withStyle(style)
+                                .withBaseImageUrl("")
                                 .withModel(DEFAULT_IMAGE_MODEL)
                                 .build())
         ).getResult();

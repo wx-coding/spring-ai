@@ -38,15 +38,6 @@ spring:
          enable: true
          index-name: spring-ai-learn
 
-       # 需要配置相关 tools 的信息
-       tool-calling:
-         baidu:
-           translate:
-             ak: ${BAIDU_TRANSLATE_APP_ID:input-your-baidu-app-id}
-             sk: ${BAIDU_TRANSLATE_SECRET_KEY:input-your-baidu-app-key}
-           map:
-             ak: ${BAIDU_MAP_API_KEY:input-your-baidu-map-key}
-
     # 注意：观测数据可能存在敏感信息！
     chat:
       client:
@@ -97,3 +88,14 @@ management:
     sampling:
       # trace 采样信息，记录每个请求
       probability: 1.0
+
+
+app:
+  # 需要配置相关 tools 的信息
+  tool-calling:
+    baidu:
+      translate:
+        ak: ${BAIDU_TRANSLATE_APP_ID:input-your-baidu-app-id}
+        sk: ${BAIDU_TRANSLATE_SECRET_KEY:input-your-baidu-app-key}
+      map:
+        ak: ${BAIDU_MAP_API_KEY:input-your-baidu-map-key}

@@ -43,9 +43,8 @@ public class ChatClientConfiguration {
             DashScopeChatModel chatModel) {
         // dashscope
         return ChatClient.builder(chatModel)
-                .defaultSystem(
-                        systemPromptTemplate.getTemplate()
-                ).defaultAdvisors(
+                // .defaultSystem(systemPromptTemplate.getTemplate())
+                .defaultAdvisors(
                         simpleLoggerAdvisor,
                         messageChatMemoryAdvisor
                 )

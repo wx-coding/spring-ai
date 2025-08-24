@@ -1,7 +1,10 @@
 package com.example.wx.entiy.tools;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
+@Data
 public class ToolCallResp {
 
 	/**
@@ -72,105 +75,8 @@ public class ToolCallResp {
 		RUNNING,
 	}
 
-	public ToolState getStatus() {
-		return status;
-	}
-
-	public void setStatus(ToolState status) {
-		this.status = status;
-	}
-
-	public String getToolName() {
-		return toolName;
-	}
-
-	public void setToolName(String toolName) {
-		this.toolName = toolName;
-	}
-
-	public String getToolParameters() {
-		return toolParameters;
-	}
-
-	public void setToolParameters(String toolParameters) {
-		this.toolParameters = toolParameters;
-	}
-
-	public String getToolResult() {
-		return toolResult;
-	}
-
-	public void setToolResult(String toolResult) {
-		this.toolResult = toolResult;
-	}
-
-	public LocalDateTime getToolStartTime() {
-		return toolStartTime;
-	}
-
-	public void setToolStartTime(LocalDateTime toolStartTime) {
-		this.toolStartTime = toolStartTime;
-	}
-
-	public LocalDateTime getToolEndTime() {
-		return toolEndTime;
-	}
-
-	public void setToolEndTime(LocalDateTime toolEndTime) {
-		this.toolEndTime = toolEndTime;
-	}
-
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getToolInput() {
-		return toolInput;
-	}
-
-	public void setToolInput(String toolInput) {
-		this.toolInput = toolInput;
-	}
-
-	public Long getToolCostTime() {
-		return toolCostTime;
-	}
-
-	public void setToolCostTime(Long toolCostTime) {
-		this.toolCostTime = toolCostTime;
-	}
-
-	public String getToolResponse() {
-		return toolResponse;
-	}
-
-	public void setToolResponse(String toolResponse) {
-		this.toolResponse = toolResponse;
-	}
-
-	@Override
-	public String toString() {
-		return "ToolCallResp{" +
-				"status=" + status +
-				", toolName='" + toolName + '\'' +
-				", toolParameters='" + toolParameters + '\'' +
-				", toolResult='" + toolResult + '\'' +
-				", toolStartTime=" + toolStartTime +
-				", toolEndTime=" + toolEndTime +
-				", errorMessage='" + errorMessage + '\'' +
-				", toolInput='" + toolInput + '\'' +
-				", toolCostTime=" + toolCostTime +
-				", toolResponse='" + toolResponse + '\'' +
-				'}';
-	}
-
 	// return a null ToolCallResp
 	public static ToolCallResp TCR() {
-
 		return new ToolCallResp();
 	}
 

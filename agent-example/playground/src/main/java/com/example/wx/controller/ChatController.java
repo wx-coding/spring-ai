@@ -1,13 +1,10 @@
 package com.example.wx.controller;
 
-import com.alibaba.cloud.ai.dashscope.api.DashScopeApi;
 import com.example.wx.annotation.UserIp;
-import com.example.wx.service.BaseService;
 import com.example.wx.service.ChatService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @author wangxiang
@@ -31,11 +24,9 @@ import java.util.Set;
 public class ChatController {
     private final ChatService chatService;
 
-    private final BaseService baseService;
 
-    public ChatController(ChatService chatService, BaseService baseService) {
+    public ChatController(ChatService chatService) {
         this.chatService = chatService;
-        this.baseService = baseService;
     }
 
     /**
@@ -59,7 +50,15 @@ public class ChatController {
         return chatService.chat(chatId, model, prompt);
     }
 
+    /**
+     * 深度思考聊天接口，提供增强的推理能力。
+     * 1. 当发送提示为空时，将返回一条错误消息。
+     * 2. 当发送模型时，允许为空，当参数有值且在模型配置列表中时，调用对应的模型。
+     * 3. 前端传递的chatId聊天内存是Object类型的，不能重复。
+     */
+    @UserIp
     @PostMapping("/deep-thinking/chat")
+    @Operation(summary = "Deep Thinking Chat with Enhanced Reasoning")
     public Flux<String> deepThinkingChat(
             HttpServletResponse response,
             @Validated @RequestBody String prompt,
